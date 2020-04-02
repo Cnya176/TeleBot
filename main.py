@@ -4,6 +4,7 @@ import telebot
 from telebot import types
 import COVID19Py
 
+
 covid19 = COVID19Py.COVID19()
 bot = telebot.TeleBot('*********************************')
 
@@ -16,7 +17,7 @@ def start(message):
 	btn4 = types.KeyboardButton('Беларусь')
 	markup.add(btn1, btn2, btn3, btn4)
 
-    send_message = f"<b>Привет {message.from_user.first_name}!</b><br>Чтобы узнать данные про коронавируса напишите название страны, например: США, Украина, Россия и так далее</br>"
+	send_message = f"<b>Привет {message.from_user.first_name}!</b><br>Чтобы узнать данные про коронавируса напишите название страны, например: США, Украина, Россия и так далее</br>"
 	bot.send_message(message.chat.id, send_message, parse_mode='html', reply_markup=markup)#Тут почему-то ошибка с Bot и markup
 
 # Функция, что сработает при отправке какого-либо текста боту
